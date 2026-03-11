@@ -99,17 +99,16 @@
       opacity: 0.7;
     }
   
-   .hero {
+    .hero {
   width: 100%;
-  background: var(--cream);
+  height: calc(100vh - 44px);
   overflow: hidden;
 }
 
 .hero img {
   width: 100%;
-  height: calc(100vh - 44px);
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
 }
   
     .section-cream {
@@ -361,6 +360,12 @@
     object-position: center top;
   }
 }
+@media (max-width: 640px) {
+  .hero {
+    height: 55vh;
+    min-height: 300px;
+  }
+}
     @media (max-width: 820px) {
   .container {
     width: min(calc(100% - 28px), var(--max));
@@ -445,10 +450,12 @@
   </header>
 
   <main>
-    <section class="hero" id="top">
-      <img src="hero.png" alt="Pete's Little Lunchbox hero image" />
-    </section>
-
+<section class="hero" id="top">
+  <picture>
+    <source srcset="hero-mobile.png" media="(max-width: 640px)">
+    <img src="hero.png" alt="Pete's Little Lunchbox hero image" />
+  </picture>
+</section>
     <section class="page-section section-cream" id="overview">
       <div class="container">
         <h2 class="section-title">Project Overview</h2>
