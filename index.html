@@ -99,18 +99,18 @@
       opacity: 0.7;
     }
   
-    .hero {
-      min-height: calc(100vh - 44px);
-      width: 100%;
-      background: var(--cream);
-    }
-  
-    .hero img {
-      width: 100%;
-      height: calc(100vh - 44px);
-      object-fit: cover;
-      object-position: center;
-    }
+   .hero {
+  width: 100%;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: calc(100vh - 44px);
+  object-fit: cover;
+  object-position: center center;
+}
   
     .section-cream {
       background: var(--cream);
@@ -351,50 +351,67 @@
         padding-right: 28px;
       }
     }
-  
+    @media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+    min-height: 260px;
+  }
+
+  .hero img {
+    object-position: center top;
+  }
+}
     @media (max-width: 820px) {
-      .container {
-        width: min(calc(100% - 28px), var(--max));
-      }
-  
-      .hero img {
-        height: auto;
-        min-height: 70vh;
-      }
-  
-      .body-copy,
-      .alpha-copy,
-      .solution-copy,
-      .intro-process-copy,
-      .results-copy {
-        font-size: 1rem;
-      }
-  
-      .section-title {
-        margin-bottom: 28px;
-      }
-  
-      .alpha-grid {
-        grid-template-columns: 260px 1fr;
-        gap: 24px;
-        padding: 32px 22px 40px;
-        align-items: center;
-      }
-  
-      .alpha-phone img {
-        max-width: 240px;
-      }
-  
-      .results-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px 18px;
-      }
-  
-      .final-link,
-      .text-link {
-        font-size: 1.05rem;
-      }
-    }
+  .container {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .hero {
+    height: 60vh;
+    min-height: 320px;
+    max-height: 500px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .body-copy,
+  .alpha-copy,
+  .solution-copy,
+  .intro-process-copy,
+  .results-copy {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+  }
+
+  .alpha-grid {
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    padding: 32px 22px 40px;
+    align-items: center;
+  }
+
+  .alpha-phone img {
+    max-width: 240px;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 18px;
+  }
+
+  .final-link,
+  .text-link {
+    font-size: 1.05rem;
+  }
+}
   
     @media (max-width: 640px) {
       .alpha-grid {
